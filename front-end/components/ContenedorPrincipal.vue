@@ -1,9 +1,10 @@
 <script lang="ts" setup></script>
 
 <template>
-  <nav class="py-2 relative w-full bg-black text-white">
-    barra principal
-  </nav>
+  <main class="flex gap-16 h-screen justify-center items-center bg-blue-800 text-neutral-900">
+    <Tarjetas divisa="US Dolar" :valor="4500" />
+    <Tarjetas divisa="Bitcoin" :valor="45000000"/>
+  </main>
 </template>
 
 <style scoped></style>
