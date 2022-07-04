@@ -9,8 +9,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // raleway: '"Raleway", sans-serif',
-        // workSans: '"Work Sans", sans-serif'
+        'custom': ['ubuntu-mono', 'Ubuntu', 'sans-serif'],
+        // 'raleway': ['Raleway', 'sans-serif'],
+        'workSans': ['Work Sans', 'sans-serif'],
+        'heebo': ['Heebo', 'sans-serif'],
       }
     },
   },

@@ -1,7 +1,4 @@
+@import '../css/fonts.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* @import "@fontsource/raleway/700-normal.css";
-@import "@fontsource/work-sans/300.css" */
-/* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,300&display=swap'); */
