@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex gap-2 bg-emerald-500 text-slate-50 w-2/4  h-1/6 rounded-md flex-col justify-center items-center md:w-1/4">
+  <div class="flex flex-col items-center justify-center w-2/4 gap-2 border-4 rounded-md border-emerald-700 bg-emerald-500 text-slate-900 h-1/6 md:w-1/4 ">
     <h1 class="text-3xl">{{divisa}} </h1>
     <h2 class="text-4xl">$ {{valor}}</h2>
   </div>

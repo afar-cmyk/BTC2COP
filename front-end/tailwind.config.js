@@ -7,7 +7,12 @@ module.exports = {
     // "./plugins/**/*.{js,ts}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // raleway: '"Raleway", sans-serif',
+        // workSans: '"Work Sans", sans-serif'
+      }
+    },
   },
   plugins: [],
 }
