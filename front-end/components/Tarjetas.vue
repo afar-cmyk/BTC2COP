@@ -12,10 +12,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center w-2/4 gap-2 border-4 rounded-md bg-sky-200 border-emerald-400 text-slate-900 h-1/6 md:w-1/4 ">
-    <h2 class="text-5xl font-semibold font-workSans ">${{valor}}</h2>
-    <h1 class="text-4xl font-heebo font-extralight ">{{divisa}}</h1>
+  <div class="w-1/5">
+    <div class="text-gray-200 py-6 px-0.5 text-5xl font-bold text-center  bg-sky-600 font-workSans rounded-t-md">
+      ${{ valor }}
+    </div>
+    <div class="p-2 text-2xl font-light text-center bg-green-500 font-heebo rounded-b-md">{{ divisa }}</div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
