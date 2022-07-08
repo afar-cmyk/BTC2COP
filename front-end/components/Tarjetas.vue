@@ -6,7 +6,7 @@ defineProps({
   },
   valor: {
     type: Number,
-    default: 12345
+    default: 1
   }
 })
 </script>
