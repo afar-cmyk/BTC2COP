@@ -38,8 +38,22 @@ const valorSeleccionado = ref('')
   <form>
     <label>
       <div class=" flex flex-row justify-center align-middle gap-4">
-        <input :disabled="valorSeleccionado == ''" v-model.number="valorIngresado"
-          class="border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" />
+        <input type="text" :disabled="valorSeleccionado == ''" v-model.number="valorIngresado" class="
+        form-control
+        block
+        min-w-[159px]
+        px-3
+        py-1.5
+        text-center
+        font-normal
+        text-gray-700
+        border border-solid border-gray-300
+        rounded-md
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      " placeholder="Ingrese un valor" />
       </div>
     </label>
   </form>
