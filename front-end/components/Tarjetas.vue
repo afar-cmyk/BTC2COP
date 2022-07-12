@@ -12,9 +12,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="max-w-lg min-w-[66%]  ">
+  <div class="max-w-[20%] min-w-[66%]  ">
     <div class="py-6 px-4 text-gray-200 text-5xl font-bold text-center bg-sky-600 font-workSans rounded-t-md">
-      ${{ valor }}
+      {{ valor }}
     </div>
     <div class="p-2 text-2xl font-light text-center bg-green-500 font-heebo rounded-b-md">{{ divisa }}</div>
   </div>

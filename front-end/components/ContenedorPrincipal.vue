@@ -7,7 +7,7 @@
       <p class="text-2xl font-light text-center font-heebo">Convertidor de divisas internaciones y electronicas a pesos
         colombianos</p>
     </div>
-    <div class="flex flex-col items-center justify-center gap-4  h-1/3 bg-slate-400">
+    <div class="flex flex-col items-center justify-center h-fit bg-slate-200 py-5">
       <Convertidor />
     </div>
     <div class="flex flex-col gap-8 items-center justify-center  h-4/6 bg-slate-100">
