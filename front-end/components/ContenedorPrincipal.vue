@@ -1,4 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const bitcoin = 29000000
+const dollar = 4535
+</script>
 
 <template>
   <main class="w-full h-screen bg-stone-100">
@@ -8,13 +11,13 @@
         colombianos</p>
     </div>
     <div class="flex flex-col items-center justify-center h-fit bg-slate-200 py-5">
-      <Convertidor />
+      <Convertidor :propDollar="dollar" :prop-bitcoin="bitcoin" />
     </div>
     <div class="flex flex-col gap-10 items-center justify-center  h-4/6 bg-slate-100">
       <h1 class=" text-sky-700 text-4xl font-bold text-center font-heebo pb-4">
         Divisas en Pesos Colombianos</h1>
-      <Tarjetas divisa="US Dollar" :valor="4535" />
-      <Tarjetas divisa="Bitcoin" :valor="29000000" />
+      <Tarjetas divisa="US Dollar" :valor="dollar" />
+      <Tarjetas divisa="Bitcoin" :valor="bitcoin" />
     </div>
   </main>
 </template>

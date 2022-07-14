@@ -1,13 +1,17 @@
 <script lang="ts" setup>
-defineProps({
-  divisa: {
-    type: String,
-    default: 'Divisa'
+const props = defineProps({
+  propDollar: {
+    type: Number,
+    default: 1
+  },
+  propBitcoin: {
+    type: Number,
+    default: 1
   }
 })
 
 let valorIngresado = ref<number>(0);
-const arrayPrueba = ref({ '': 1, dollar: 4500, bitcoin: 40000 })
+const arrayPrueba = ref({ '': 1, dollar: props.propDollar, bitcoin: props.propBitcoin })
 const valorSeleccionado = ref('')
 </script>
 
@@ -56,13 +60,12 @@ const valorSeleccionado = ref('')
   </form>
 
   <div>
-    <div class="text-sky-700 text-4xl font-bold text-center font-workSans rounded-t-md">
+    <div class="text-sky-700 text-3xl font-bold text-center font-workSans rounded-t-md">
       {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en") }}
     </div>
     <div class="text-2xl font-light text-center font-heebo rounded-b-md">Pesos Colombianos</div>
   </div>
 
-  <!-- <Tarjetas :valor="valorIngresado * arrayPrueba[valorSeleccionado]" divisa="Pesos Colombianos" /> -->
 </template>
 
 <style scoped>
