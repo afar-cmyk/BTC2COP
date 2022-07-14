@@ -37,29 +37,23 @@ const valorSeleccionado = ref('')
     Ingrese la cantidad que desea convertir:
   </p>
 
-  <form class="px-3 mb-10">
-    <label>
-      <div class=" flex flex-row justify-center align-middle gap-4">
-        <input type="text" maxlength="12" :disabled="valorSeleccionado == ''" v-model.number="valorIngresado" class="
-        form-control
-        block
-        min-w-[159px]
-        px-3
-        py-1.5 
-        text-left
-        font-workSans
-        text-gray-700
-        border border-solid border-gray-300
-        rounded-md
-        transition
-        ease-in-out
-        m-0
-       focus-visible:text-gray-700 focus-visible:bg-white focus-visible:border-2 focus-visible:border-red-800
-      " />
-      </div>
-    </label>
+  <form class="px-3 mb-8">
+    <div class=" flex flex-row justify-center align-middle gap-4">
+      <input type="text" maxlength="12" :disabled="valorSeleccionado == ''" v-model.number="valorIngresado" class="
+    min-w-[159px]
+    px-3
+    py-1.5 
+    text-left
+    font-worksans
+    text-gray-700
+    border border-solid border-gray-300
+    rounded
+     focus:ring
+     focus:ring-offset-0
+     focus-visible:ring-sky-600
+     focus-visible:outline-transparent">
+    </div>
   </form>
-
 
   <div>
     <div class="text-sky-700 text-4xl font-bold text-center font-workSans rounded-t-md">
