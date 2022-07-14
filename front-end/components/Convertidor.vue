@@ -54,7 +54,7 @@ const valorSeleccionado = ref('')
         transition
         ease-in-out
         m-0
-       focus:text-gray-700 focus:bg-white focus:ring-sky-600 focus:ring-2 focus:border-transparent
+       focus-visible:text-gray-700 focus-visible:bg-white focus-visible:border-2 focus-visible:border-red-800
       " />
       </div>
     </label>
@@ -63,7 +63,7 @@ const valorSeleccionado = ref('')
 
   <div>
     <div class="text-sky-700 text-4xl font-bold text-center font-workSans rounded-t-md">
-      {{ valorIngresado * arrayPrueba[valorSeleccionado] }}
+      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en") }}
     </div>
     <div class="text-2xl font-light text-center font-heebo rounded-b-md">Pesos Colombianos</div>
   </div>

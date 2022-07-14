@@ -10,9 +10,11 @@
     <div class="flex flex-col items-center justify-center h-fit bg-slate-200 py-5">
       <Convertidor />
     </div>
-    <div class="flex flex-col gap-8 items-center justify-center  h-4/6 bg-slate-100">
-      <Tarjetas divisa="US Dollar" :valor="4500" />
-      <Tarjetas divisa="Bitcoin" :valor="45000000" />
+    <div class="flex flex-col gap-10 items-center justify-center  h-4/6 bg-slate-100">
+      <h1 class=" text-sky-700 text-4xl font-bold text-center font-heebo pb-4">
+        Divisas en Pesos Colombianos</h1>
+      <Tarjetas divisa="US Dollar" :valor="4535" />
+      <Tarjetas divisa="Bitcoin" :valor="29000000" />
     </div>
   </main>
 </template>
