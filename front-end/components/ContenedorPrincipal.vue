@@ -16,7 +16,7 @@ const dollar = 4535
     <div class="flex flex-col gap-10 items-center justify-center  h-4/6 bg-slate-100">
       <h1 class=" text-sky-700 text-4xl font-bold text-center font-heebo pb-4 max-w-md">
         Divisas en Pesos Colombianos</h1>
-      <div class="flex flex-col gap-10 items-center justify-center w-screen md:flex-row">
+      <div class="flex flex-col gap-10 items-center justify-center w-fit  md:flex-row">
         <Tarjetas divisa="US Dollar" :valor="dollar" />
         <Tarjetas divisa="Bitcoin" :valor="bitcoin" />
       </div>
