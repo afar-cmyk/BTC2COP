@@ -40,6 +40,12 @@ exports.handler = async function (event, context) {
     return ponerPunto;
   };
 
+  let valorFinal = {
+    btc: tratarValores(btcCrudo),
+    cop: tratarValores(copCrudo),
+  };
+  console.log(valorFinal);
+
   return {
     statusCode: 200,
     body: JSON.stringify({
