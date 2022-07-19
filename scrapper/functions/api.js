@@ -4,9 +4,11 @@ const puppeteer = require("puppeteer-core");
 exports.handler = async function (event, context) {
   const browser = await puppeteer.launch({
     args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
     executablePath:
       process.env.CHROME_EXECUTABLE_PATH || (await chromium.executablePath),
-    headless: true,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
   });
 
   const page = await browser.newPage();
