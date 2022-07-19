@@ -1,14 +1,19 @@
 {
   "name": "scrapper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Recupera valores de divisas de forma diaria desde un sitio web para luego alojarlo en una base de datos",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "puppeteer",
+    "nodejs",
+    "express",
+    "mongoose"
+  ],
+  "author": "Andrés Felipe Alvarez",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.0",
     "chrome-aws-lambda": "^10.1.0",
