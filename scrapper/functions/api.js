@@ -3,8 +3,8 @@ const Divisas = require("../models/Divisa");
 
 exports.handler = async function (event, context, callback) {
   const nuevaDivisa = new Divisas({
-    cop: "prueba3",
-    btc: "prueba3",
+    cop: "prueba4",
+    btc: "prueba4",
   });
 
   nuevaDivisa
