@@ -1,11 +1,13 @@
-require("../database/mongo.js");
+require("../Database/mongo.js");
 const Divisas = require("../models/Divisa");
 
 exports.handler = async function (event, context, callback) {
   const nuevaDivisa = new Divisas({
-    cop: "prueba",
-    btc: "prueba",
+    cop: "prueba3",
+    btc: "prueba3",
   });
+
+  const prueba = "";
 
   nuevaDivisa
     .save()
@@ -16,5 +18,8 @@ exports.handler = async function (event, context, callback) {
       console.error(err);
     });
 
-  return callback(null);
+  return {
+    statusCode: 200,
+    body: "Se agrego un dato satisfactoriamente!",
+  };
 };
