@@ -7,8 +7,6 @@ exports.handler = async function (event, context, callback) {
     btc: "prueba3",
   });
 
-  const prueba = "";
-
   nuevaDivisa
     .save()
     .then((result) => {
