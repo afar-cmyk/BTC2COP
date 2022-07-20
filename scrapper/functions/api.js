@@ -1,7 +1,8 @@
 require("../database/mongo.js");
-const Divisas = require("../models/Divisa");
 
 exports.handler = async function (event, context, callback) {
+  const Divisas = require("../models/Divisa");
+
   const nuevaDivisa = new Divisas({
     cop: "prueba4",
     btc: "prueba4",
