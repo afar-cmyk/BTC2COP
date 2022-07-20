@@ -1,4 +1,4 @@
-require("../Database/mongo.js");
+require("../database/mongo.js");
 const Divisas = require("../models/Divisa");
 
 exports.handler = async function (event, context, callback) {
