@@ -6,15 +6,8 @@
   from = "/"
   status = 200
 
-[[redirects]]
-  to = "/.netlify/functions/btc"
-  from = "/btc"
-  status = 200
-
-[[redirects]]
-  to = "/.netlify/functions/cop"
-  from = "/cop"
-  status = 200
-
 [build.environment]
   AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
+
+[functions."api"]
+  schedule = "@hourly"
