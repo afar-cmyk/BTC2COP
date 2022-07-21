@@ -1,26 +1,5 @@
 const { MongoClient } = require("mongodb");
 
-let dbCacheada = null;
-
-async function conectarDb() {
-  if (dbCacheada) {
-    console.log("Utilizando la base de datos en cache");
-    return Promise.resolve(dbCacheada);
-  } else {
-    return MongoClient.connect(process.env.MONGODB_URI)
-      .then((cliente) => {
-        let db = cliente.db("Divisas");
-        console.log("Nueva conexion a la base de datos");
-        dbCacheada = db;
-        return dbCacheada;
-      })
-      .catch((error) => {
-        console.log("Error en la conexion!");
-        console.log(error);
-      });
-  }
-}
-
 exports.handler = async function (event, context) {
   let dbCacheada = null;
 
@@ -43,10 +22,15 @@ exports.handler = async function (event, context) {
     }
   }
 
+  let datos = { cop: "prueba8", btc: "prueba8" };
+
   const db = await conectarDb();
   const collection = await db.collection("valores");
 
+  await collection.insertOne(datos);
+
   const asddd = await collection.find({}).toArray();
+
   console.log(asddd);
   return {
     statusCode: 200,
