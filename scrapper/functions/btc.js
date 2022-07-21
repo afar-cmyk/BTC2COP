@@ -21,8 +21,6 @@ exports.handler = async function (event, context) {
   const btcContenido = await btc.getProperty("textContent");
   const btcCrudo = await btcContenido.jsonValue();
 
-  await browser.close();
-
   return {
     statusCode: 200,
     body: JSON.stringify(btcCrudo),

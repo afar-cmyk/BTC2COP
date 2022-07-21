@@ -21,8 +21,6 @@ exports.handler = async function (event, context) {
   const copContenido = await cop.getProperty("textContent");
   const copCrudo = await copContenido.jsonValue();
 
-  await browser.close();
-
   return {
     enumerable: true,
     statusCode: 200,
