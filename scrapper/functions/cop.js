@@ -26,8 +26,6 @@ exports.handler = async function (event, context) {
   return {
     enumerable: true,
     statusCode: 200,
-    body: JSON.stringify({
-      cop: copCrudo,
-    }),
+    body: JSON.stringify(copCrudo),
   };
 };

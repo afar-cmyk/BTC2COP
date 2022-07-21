@@ -1,4 +1,5 @@
 const { MongoClient } = require("mongodb");
+const axios = require("axios").default;
 
 exports.handler = async function (event, context) {
   let dbCacheada = null;
@@ -22,67 +23,23 @@ exports.handler = async function (event, context) {
     }
   }
 
-  let datos = { cop: "prueba8", btc: "prueba8" };
+  const resCop = await axios.get(`https://b2c-api.netlify.app/cop`);
+  const respuestaCop = resCop.data;
+
+  const resBtc = await axios.get(`https://b2c-api.netlify.app/btc`);
+  const respuestaBtc = resBtc.data;
+
+  let datos = { cop: respuestaCop, btc: respuestaBtc };
 
   const db = await conectarDb();
   const collection = await db.collection("valores");
 
   await collection.insertOne(datos);
 
-  const asddd = await collection.find({}).toArray();
-
-  console.log(asddd);
+  const listarValores = await collection.find({}).toArray();
+  console.log(listarValores);
   return {
     statusCode: 200,
-    body: JSON.stringify(asddd),
+    body: JSON.stringify(listarValores),
   };
 };
-
-// const mongo = require("../Database/mongo");
-
-// exports.handler = async function (event, context) {
-//   const db = await mongo.conectarDb();
-//   const collection = await db.collection("Divisas");
-
-//   const users = await collection.find({}).toArray();
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify({
-//       prueba: users,
-//     }),
-//   };
-// };
-
-// // require("../database/mongo.js");
-
-// const { conexionDb, obtenerDb } = require("../database/mongo");
-
-// let baseDatos;
-
-// conexionDb((err) => {
-//   if (!err) {
-//     console.log(`Conectado a la base de datos!`);
-//     baseDatos = obtenerDb();
-//   }
-// });
-
-// exports.handler = async function (event, context, callback) {
-//   let prueba = [];
-
-//   baseDatos
-//     .collection("valores")
-//     .find()
-//     .sort({ cop: 1 })
-//     .forEach((pruebas) => pruebas.push(prueba))
-//     .then(() => {
-//       res.status(200).json(prueba);
-//     })
-//     .catch(() => {
-//       res.status(500).json({ error: "No se pudo obtener la informacion" });
-//     });
-
-//   return {
-//     statusCode: 200,
-//     body: "Se agrego un dato satisfactoriamente!",
-//   };
-// };
