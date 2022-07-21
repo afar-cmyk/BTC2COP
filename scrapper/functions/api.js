@@ -1,14 +1,14 @@
 require("../database/mongo.js");
 
 exports.handler = async function (event, context, callback) {
-  const Divisas = require("../models/Divisa");
+  const Valores = require("../models/Valores");
 
-  const nuevaDivisa = new Divisas({
-    cop: "prueba4",
-    btc: "prueba4",
+  const nuevosValores = new Valores({
+    cop: "prueba6",
+    btc: "prueba6",
   });
 
-  nuevaDivisa
+  nuevosValores
     .save()
     .then((result) => {
       console.log(result);
