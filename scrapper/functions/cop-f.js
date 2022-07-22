@@ -23,16 +23,16 @@ exports.handler = async function (event, context) {
 
   await browser.close();
 
-  const tratarValores = (valores) => {
-    let convertirNumero = parseFloat(valores);
-    return convertirNumero;
-  };
+  // const tratarValores = (valores) => {
+  //   let convertirNumero = parseFloat(valores);
+  //   return convertirNumero;
+  // };
 
-  let valorFinal = tratarValores(copCrudo);
+  // let valorFinal = tratarValores(copCrudo);
 
   return {
     enumerable: true,
     statusCode: 200,
-    body: JSON.stringify(valorFinal),
+    body: JSON.stringify(copCrudo),
   };
 };
