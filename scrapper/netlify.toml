@@ -16,6 +16,11 @@
   from = "/btc"
   status = 200
 
+[[redirects]]
+  to = "/.netlify/functions/fetch-db"
+  from = "/db"
+  status = 200
+
 [build.environment]
   AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
 
