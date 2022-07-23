@@ -1,5 +1,6 @@
 const { MongoClient } = require("mongodb");
 const axios = require("axios").default;
+const moment = require("moment");
 
 exports.handler = async function (event, context) {
   let dbCacheada = null;
@@ -29,7 +30,13 @@ exports.handler = async function (event, context) {
   const resBtc = await axios.get(`https://${process.env.API_URL}/api/btc`);
   const respuestaBtc = resBtc.data;
 
-  let datos = { cop: respuestaCop["cop"], btc: respuestaBtc["btc"] };
+  let fechaActual = moment().format("YYYY-MM-DD HH:mm:ss");
+
+  let datos = {
+    fecha: fechaActual,
+    cop: respuestaCop["cop"],
+    btc: respuestaBtc["btc"],
+  };
 
   const db = await conectarDb();
   const collection = await db.collection("valores");
