@@ -2,19 +2,28 @@
   functions = "functions"
 
 [[redirects]]
-  to = "/.netlify/functions/api:splat"
+  to = "/.netlify/functions/post-valores:splat"
   from = "/api/*"
   status = 200
 
 [[redirects]]
-  to = "/.netlify/functions/cop"
+  to = "/.netlify/functions/fetch-cop"
   from = "/cop"
   status = 200
 
 [[redirects]]
-  to = "/.netlify/functions/btc"
+  to = "/.netlify/functions/fetch-btc"
   from = "/btc"
   status = 200
 
 [build.environment]
   AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
+
+[functions.fetch-cop]
+schedule = "2 * * * *"
+
+[functions.fetch-btc]
+schedule = "2 * * * *"
+
+[functions.post-valores]
+schedule = "3 * * * *"

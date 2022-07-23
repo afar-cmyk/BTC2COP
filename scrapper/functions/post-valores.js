@@ -23,23 +23,21 @@ exports.handler = async function (event, context) {
     }
   }
 
-  const resCop = await axios.get(`https://b2c-api.netlify.app/cop`);
+  const resCop = await axios.get(`https://${process.env.API_URL}/api/cop`);
   const respuestaCop = resCop.data;
 
-  const resBtc = await axios.get(`https://b2c-api.netlify.app/btc`);
+  const resBtc = await axios.get(`https://${process.env.API_URL}/api/btc`);
   const respuestaBtc = resBtc.data;
 
-  let datos = { cop: respuestaCop, btc: respuestaBtc };
+  let datos = { cop: respuestaCop["cop"], btc: respuestaBtc["btc"] };
 
   const db = await conectarDb();
   const collection = await db.collection("valores");
 
   await collection.insertOne(datos);
 
-  const listarValores = await collection.find({}).toArray();
-  console.log(listarValores);
   return {
     statusCode: 200,
-    body: JSON.stringify(listarValores),
+    body: JSON.stringify(datos),
   };
 };
