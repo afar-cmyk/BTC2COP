@@ -25,10 +25,10 @@
   AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
 
 [functions.fetch-cop]
-  schedule = "59 */23 * * *"
+  schedule = "59 00 * * *"
 
 [functions.fetch-btc]
-  schedule = "59 */23 * * *"
+  schedule = "59 00 * * *"
 
 [functions.post-valores]
-  schedule = "0 */24 * * *"
+  schedule = "00 01 * * *"
