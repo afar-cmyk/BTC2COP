@@ -24,3 +24,11 @@
 [build.environment]
   AWS_LAMBDA_JS_RUNTIME = "nodejs12.x"
 
+[functions.fetch-cop]
+  schedule = "1 */8 * * *"
+
+[functions.fetch-btc]
+  schedule = "1 */8 * * *"
+
+[functions.post-valores]
+  schedule = "2 */8 * * *"
