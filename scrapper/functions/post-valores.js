@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
   const resBtc = await axios.get(`https://${process.env.API_URL}/api/btc`);
   const respuestaBtc = resBtc.data;
 
-  let fechaActual = moment().format("YYYY-MM-DD");
+  let fechaActual = moment().subtract(5, "hour").format("YYYY-MM-DD");
 
   let datos = {
     fecha: fechaActual,
