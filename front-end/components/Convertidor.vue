@@ -58,11 +58,7 @@ const valorSeleccionado = ref('');
   </form>
   <div>
     <div class="text-sky-700 text-3xl font-bold text-center font-workSans rounded-t-md">
-      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en", {
-          minimumFractionDigits:
-            2, maximumFractionDigits: 2
-        })
-      }}
+      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en", { maximumFractionDigits: 2 }) }}
     </div>
     <div class="text-2xl font-light text-center font-heebo rounded-b-md">Pesos Colombianos</div>
   </div>
