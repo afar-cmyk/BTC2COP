@@ -11,15 +11,15 @@ const props = defineProps({
 })
 
 let valorIngresado = ref<number>(0);
-const arrayPrueba = ref({ '': 1, dollar: props.propDollar, bitcoin: props.propBitcoin })
-const valorSeleccionado = ref('')
+const valorBitcoin: number = props.propDollar * props.propBitcoin;
+const arrayPrueba = ref({ '': 1, dollar: props.propDollar, bitcoin: valorBitcoin });
+const valorSeleccionado = ref('');
 </script>
 
 <template>
   <p class="font-heebo font-light text-base text-slate-70 text-center mb-2">
     Seleccione una divisa:
   </p>
-
   <ul class="grid grid-cols-2 gap-x-5 max-w-md mx-auto mb-6">
     <li class="relative ">
       <input v-model="valorSeleccionado" class="sr-only peer" type="radio" value="dollar" name="answer"
@@ -36,11 +36,9 @@ const valorSeleccionado = ref('')
         for="divisa_bitcoin">Bitcoin</label>
     </li>
   </ul>
-
   <p class="font-heebo font-light text-base text-slate-70 text-center mb-2">
     Ingrese la cantidad que desea convertir:
   </p>
-
   <form class="px-3 mb-8">
     <div class=" flex flex-row justify-center align-middle gap-4">
       <input type="text" maxlength="12" :disabled="valorSeleccionado == ''" v-model.number="valorIngresado" class="
@@ -58,14 +56,16 @@ const valorSeleccionado = ref('')
      focus-visible:outline-transparent">
     </div>
   </form>
-
   <div>
     <div class="text-sky-700 text-3xl font-bold text-center font-workSans rounded-t-md">
-      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en") }}
+      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en", {
+          minimumFractionDigits:
+            2, maximumFractionDigits: 2
+        })
+      }}
     </div>
     <div class="text-2xl font-light text-center font-heebo rounded-b-md">Pesos Colombianos</div>
   </div>
-
 </template>
 
 <style scoped>

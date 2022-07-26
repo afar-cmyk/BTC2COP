@@ -2,8 +2,8 @@
 const { data: datos, pending } = await useLazyAsyncData("datos", () =>
   $fetch("/api/fetch-db")
 )
-const bitcoin = datos.value.body[0].btc
-const dollar = datos.value.body[0].cop
+const dollar = datos.value.body[0].cop;
+const bitcoin = datos.value.body[0].btc * dollar;
 </script>
 
 <template>
@@ -18,7 +18,7 @@ const dollar = datos.value.body[0].cop
     </div>
     <div class="flex flex-col gap-10 items-center justify-center h-fit py-12 bg-slate-100">
       <h1 class=" text-sky-700 text-4xl font-bold text-center font-heebo max-w-md">
-        Precio de hoy:</h1>
+        Divisas en pesos Colombianos:</h1>
       <div class="flex flex-col gap-10 items-center justify-center w-fit  md:flex-row">
         <Tarjetas v-if="!pending" divisa="US Dollar" :valor="dollar" />
         <Tarjetas v-if="!pending" divisa="Bitcoin" :valor="bitcoin" />

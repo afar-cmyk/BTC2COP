@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="min-w-[320px]">
+  <div class="min-w-[400px]">
     <div class="py-6 px-4 text-gray-200 text-5xl font-bold text-center bg-sky-600 font-workSans rounded-t-md">
       {{ valor.toLocaleString("en") }}
     </div>
