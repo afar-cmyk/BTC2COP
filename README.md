@@ -1,5 +1,9 @@
-# BTC2COP
-Currency converter calculator and chat bot for Cisco Webex
+<p align="center">
+<img src="https://raw.githubusercontent.com/afar-cmyk/BTC2COP/master/front-end/assets/b2c-logo.svg" width="200">
+<br>
+<i>Currency converter calculator and chat bot for Cisco Webex</i>
+</p>
+
 
 ## Front-end
 Nuxt3 and Tailwind CSS hosted on Netlify\
