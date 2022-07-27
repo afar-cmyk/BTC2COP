@@ -57,10 +57,10 @@ const valorSeleccionado = ref('');
     </div>
   </form>
   <div>
-    <div class="text-sky-700 text-3xl font-bold text-center font-workSans rounded-t-md">
-      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("en", { maximumFractionDigits: 2 }) }}
+    <div class="text-sky-700 text-2xl font-bold text-center font-workSans rounded-t-md">
+      {{ (valorIngresado * arrayPrueba[valorSeleccionado]).toLocaleString("es-CO", { maximumFractionDigits: 2 }) }}
     </div>
-    <div class="text-2xl font-light text-center font-heebo rounded-b-md">Pesos Colombianos</div>
+    <div class="text-1xl font-light text-center font-heebo rounded-b-md">Pesos Colombianos</div>
   </div>
 </template>
 
